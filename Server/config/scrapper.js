@@ -11,10 +11,13 @@ const scrapeArticle = async (topic) => {
 
   const scrapedArticles = await pageInstance.evaluate(() => {
     const extractPublishDate = (dateString) => {
+
+
+      
       // Log the dateString for debugging
       console.log('dateString:', dateString);
 
-      // Attempt to match "MMM DD, YYYY" format
+      // Attempt to match "MMM DD YYYY" format
       const dateMatch = dateString.match(/\b[A-Za-z]{3}\s\d{1,2},\s\d{4}\b/);
       if (dateMatch) {
         return dateMatch[0];
@@ -39,7 +42,9 @@ const scrapeArticle = async (topic) => {
         : "No url available",
     }));
 
-    return articles.slice(0, 5); // Limit to 5 articles
+
+   // Limit to 5 articles
+    return articles.slice(0, 5); 
   });
 
   await browser.close();
