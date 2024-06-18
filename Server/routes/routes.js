@@ -3,8 +3,6 @@ const { createScrapArticle, getArticles } = require("../controllers/articleScrap
 const articleScrapperRouter= express.Router()
 
 
-
-
 articleScrapperRouter.post('/scrape',createScrapArticle)
 articleScrapperRouter.get('/articles',getArticles)
   

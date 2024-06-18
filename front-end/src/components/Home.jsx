@@ -63,9 +63,6 @@ const Home = () => {
       <SearchForm onSearch={handleSearch} />
       {loading && (
         <VStack spacing={4}>
-
-
-          
           <Spinner />
           <Text>Please wait...</Text>
         </VStack>
